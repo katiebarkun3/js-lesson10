@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson10</title>
+</head>
+<body>
+    <button id="bt1" name="butt">кнопка</button>
+    <button id="bt2" class="button2">кнопка</button>
+   
+
+    <div>
+        <button id="bt3" class="button2">кнопка</button>
+    </div>
+
+    <script>
+        //первый способ получения доступа к элементу
+       /*  let bt = document.getElementById('bt1');
+        bt.style.fontSize = '30px'; */
+
+       /*  document.getElementById('bt1').style.fontSize = '30px'; */
+
+        //второй способ получения доступа к элементу
+        /* let bt = document.getElementsByTagName('button');
+        console.log(bt);
+        bt[2].style.width = '200px'; */
+
+        //третий способ получения доступа к элементу
+        /* let bt1 = document.getElementsByName('butt')
+        console.log(bt1); */
+
+        //четвертый способ получения доступа к элементу
+       /* let bt = document.getElementsByClassName('button2');
+        console.log(bt); */
+
+        //пятый способ получения доступа к элементу
+        /* let bt5 = document.querySelectorAll('body > div button');
+        console.log(bt5); */
+
+        //шестой способ получения доступа к элементу
+        /* let bt6 = document.querySelector('[name = butt]');
+        console.dir(bt6); //console.log(bt6);   */
+
+        /* setTimeout(function(){
+            bt6.style.color = 'red';
+        }, 1000); */
+        
+        /* setInterval(function(){
+            document.body.append(document.createElement('button')); 
+            console.log('+')
+        }, 500);
+
+        setTimeout(function(){
+            clearInterval(start);
+        }, 5000); */
+
+        let arrEl = document.querySelectorAll('button');
+        console.log(arrEl);
+            for(let item of arrEl){
+                item.style.color = 'red';
+            }
+
+
+    </script>
+</body>
+</html>
