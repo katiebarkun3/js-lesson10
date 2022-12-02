@@ -4,65 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lesson10</title>
+    <title>ls11</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .colorRed{
+            background-color: red;
+        }
+
+        .colorGreen{
+            background-color: green;
+        }
+
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <button id="bt1" name="butt">кнопка</button>
-    <button id="bt2" class="button2">кнопка</button>
-   
 
-    <div>
-        <button id="bt3" class="button2">кнопка</button>
-    </div>
+<!--     <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis deserunt temporibus iure dolores quo fugit veniam inventore repellat, debitis dolorem quae voluptates, corporis ut vel accusantium itaque, sint delectus voluptate.</p>
+    <p class="text1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis deserunt temporibus iure dolores quo fugit veniam inventore repellat, debitis dolorem quae voluptates, corporis ut vel accusantium itaque, sint delectus voluptate.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis deserunt temporibus iure dolores quo fugit veniam inventore repellat, debitis dolorem quae voluptates, corporis ut vel accusantium itaque, sint delectus voluptate.</p> -->
+
+    <div class="circle colorGreen"></div>
 
     <script>
-        //первый способ получения доступа к элементу
-       /*  let bt = document.getElementById('bt1');
-        bt.style.fontSize = '30px'; */
+        /* let el = document.querySelector('.text'); */
+       /*  console.log(el); */
+        /* let cl = 'color';
+        el.style[cl] = 'red'; */
 
-       /*  document.getElementById('bt1').style.fontSize = '30px'; */
+        /* el.className = el.className + ' fs'; */
 
-        //второй способ получения доступа к элементу
-        /* let bt = document.getElementsByTagName('button');
-        console.log(bt);
-        bt[2].style.width = '200px'; */
+        /* el.classList.add('fs');
 
-        //третий способ получения доступа к элементу
-        /* let bt1 = document.getElementsByName('butt')
-        console.log(bt1); */
 
-        //четвертый способ получения доступа к элементу
-       /* let bt = document.getElementsByClassName('button2');
-        console.log(bt); */
-
-        //пятый способ получения доступа к элементу
-        /* let bt5 = document.querySelectorAll('body > div button');
-        console.log(bt5); */
-
-        //шестой способ получения доступа к элементу
-        /* let bt6 = document.querySelector('[name = butt]');
-        console.dir(bt6); //console.log(bt6);   */
-
-        /* setTimeout(function(){
-            bt6.style.color = 'red';
-        }, 1000); */
+        el.classList.remove('text');
         
-        /* setInterval(function(){
-            document.body.append(document.createElement('button')); 
-            console.log('+')
-        }, 500);
+        let el1 = document.querySelector('.text1');
+        console.log(el1);
+        el1.classList.add('color'); */
 
-        setTimeout(function(){
-            clearInterval(start);
-        }, 5000); */
 
-        let arrEl = document.querySelectorAll('button');
-        console.log(arrEl);
-            for(let item of arrEl){
-                item.style.color = 'red';
+        let el = document.querySelector('.circle');
+        console.log(el);
+
+     /*    let count = true;
+ */
+        /* function changeColor(){
+            if(count == true) {
+                el.classList.add('colorRed');
+                el.classList.remove('colorGreen');
+                count = false;
+            } else {
+                el.classList.add('colorGreen');
+                el.classList.remove('colorRed');
+                count = true;
             }
+        }
+ */
+ /* function changeColor(){
+           el.classList.toggle('colorRed');//если есть класс - удаляет, если нет - добавляет
+           el.classList.toggle('colorGreen');
+ } */
+
+        /* let start = setInterval(changeColor, 1000); */
+                
+       /*  setTimeout(() => {
+            clearInterval(start);
+        }, 5000) */
+        
+       /*  let start1 = setInterval(function() {
+            el.style['background-color'] = `rgb(${getRC()}, ${getRC()}, ${getRC()})`
+        }, 1000);
+
+
+        function getRC(){
+            return Math.floor(Math.random() * 256);
+        }
+ */
+        console.log(getComputedStyle(el).width);
+
+
+        setTimeout(() => {
+            el.style.width = `${parseInt(getComputedStyle(el).width) + 100}px`
+            console.log(el.style.width);
+            el.style.height = `${parseInt(getComputedStyle(el).height) + 100}px`
+            console.log(el.style.height);
+        }, 2000);
+        
+
 
 
     </script>
+
 </body>
 </html>
